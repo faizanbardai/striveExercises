@@ -283,6 +283,20 @@
     */
 
         /* WRITE YOUR CODE HERE */
+        function loopUntil(intX){
+            //checking if the number is between 0-9, is an integer and not anything else. 
+            if(intX<0 || intX > 9 || !Number.isInteger(intX) || Number.isNaN(intX)){
+                console.log("Please enter an integer between 0 and 9");
+            } else {
+                var times = 0; //setting times to zero
+                var rndNum; //initializing random number variable
+                while (times !== 3){ //condition to check if 3 times in a row is reached
+                    rndNum = Math.random()*10; 
+                    rndNum > intX ? times++ : times = 0; //resetting time if random number is less than number
+                    console.log (rndNum.toFixed(2)); //prints random number up to 2 d.p. 
+                };
+            };                        
+        };
 
         /* EXERCISE 17
     Write a function "average" which receives an array and return the average value. The function automatically skips non-numeric entries in the array.
