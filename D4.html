@@ -50,6 +50,13 @@
     */
 
         /* WRITE YOUR CODE HERE */
+        function boundary(intN){
+            if (Number.isInteger(intN)){ //checks if the number is integer
+                return (intN >= 20 && intN <=100) || intN === 400; //returns true if N is within 20 and 100 (included) or equal to 400
+            } else {
+                console.log("Number is not interger"); //in case the N is not an integer. 
+            }            
+        };
 
         /* EXERCISE 5
     Write a function "strivify" which accepts a string S. Add to S "Strive" in front of a given string, if the given string begins with "Strive" then return the original string.
