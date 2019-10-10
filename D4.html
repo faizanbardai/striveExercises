@@ -181,7 +181,32 @@
     Create a function "shippingCartTotal" which calculates the total due to the shop.
     */
 
-        /* WRITE YOUR CODE HERE */
+        /* WRITE YOUR CODE HERE */    
+    
+        //array of object
+
+        var shoppingCart = [
+            {
+            price:20,
+            name: "Product1",
+            id : "A01",
+            number : 101010
+            },
+            {
+            price:40,
+            name: "Product2",
+            id : "A02",
+            number : 101011
+            }
+        ];
+
+        function shippingCartTotal(shoppingCart){
+            var totalDue=0;
+            shoppingCart.forEach(function(element){ //running through each object element by element
+                totalDue += element.price; //extracting price of each object and adding to total due to the shop. 
+            });
+            return totalDue;
+        };
 
         /* EXERCISE 13
     In your eCommerce you have an array of object called shoppingCart. In this array you have a number of objects with a price, name, id and number to be shipped.
