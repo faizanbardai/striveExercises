@@ -63,6 +63,24 @@
     */
 
         /* WRITE YOUR CODE HERE */
+        function strivify(userString){
+            switch(userString){
+                case "S":
+                    return userString+"trive";
+                    break;
+                case "Strive":
+                case "STRIVE":
+                    return userString;
+                default:
+                    {
+                        if (userString.indexOf("Strive") == 0 || userString.indexOf("STRIVE") == 0){
+                            return userString;
+                        } else {
+                            return console.log('String not accpeted. Try again with "S" or "Strive" or "STRIVE"');
+                        };
+                    }
+            }
+        };
 
         /* EXERCISE 6
     Write a function "check3and7" which accepts a positive number and check if it is a multiple of 3 or a multiple of 7.
