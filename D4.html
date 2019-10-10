@@ -101,6 +101,12 @@
     */
 
         /* WRITE YOUR CODE HERE */
+        function reverseString(userString) {
+            var breakUserString = userString.split(""); //string --> array
+            var reverseUserString = breakUserString.reverse(); //array index reversed
+            var unbreakUserString = reverseUserString.join(""); //array --> string
+            return unbreakUserString; 
+        };
 
         /* EXERCISE 8
     Write a function "upperFirst" to capitalize the first letter of each word of a given string passed as parameter
