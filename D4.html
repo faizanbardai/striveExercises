@@ -23,7 +23,13 @@
             Write a function "crazySum" which receives two given integers. If the two values are same, then returns triple their sum.
             */
 
-    
+        function crazySum( int1, int2 ){ //function signature
+            if ( int1 === int2 ){ //checking if the two values are same
+                return 3 * ( int1 + int2 ); //returning tripple the sum
+            } else {
+                return console.log("The two given integers are not same.") //in case the values are not same
+            }
+        };
 
     /* EXERCISE 3
     Write a function "crazyDiff" that computes the 
