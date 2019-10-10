@@ -187,16 +187,28 @@
 
         var shoppingCart = [
             {
-            price:20,
+            price: 20,
             name: "Product1",
             id : "A01",
             number : 101010
             },
             {
-            price:40,
+            price: 80,
             name: "Product2",
             id : "A02",
             number : 101011
+            },
+            {
+            price: 40,
+            name: "Product3",
+            id : "A03",
+            number : 101111
+            },
+            {
+            price: 80,
+            name: "Product4",
+            id : "A04",
+            number : 111111
             }
         ];
 
@@ -227,6 +239,33 @@
     */
 
         /* WRITE YOUR CODE HERE */
+
+        //using the same array of objects as in exercise 12
+        function maxShoppingCart(shoppingCart){    
+            
+            //Finding the most expensive item's price
+
+            var mostExpensiveItemPrice = shoppingCart.reduce((mostExpensiveItemPrice, element) => {
+                return element.price > mostExpensiveItemPrice ? mostExpensiveItemPrice = element.price : mostExpensiveItemPrice;
+            },0);
+
+            //Finding object or objects with the most expensive price
+            //In case there are more than 1 item with the same expensive price            
+            
+            for (i = 0; i < shoppingCart.length; i++){
+                if (shoppingCart[i].price === mostExpensiveItemPrice) {
+                    ExpensiveItem.push(shoppingCart[i]);
+                }
+            };
+            
+            return ExpensiveItem;
+
+            //trying the same with reduce function. 
+            // var ExpensiveItem = shoppingCart.reduce((acc, element) => {
+            //     return element.price === acc ? ExpensiveItem.push(element) : null;
+            // },mostExpensiveItemPrice);
+
+        };
 
         /* EXERCISE 15
     In your eCommerce you have an array of object called shoppingCart. In this array you have a number of objects with a price, name, id and number to be shipped.
