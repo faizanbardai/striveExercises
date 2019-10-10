@@ -145,7 +145,19 @@
     */
 
         /* WRITE YOUR CODE HERE */
-
+        function giveMeRandom(userNumber){
+            if (userNumber.isNaN || !Number.isInteger(userNumber) || userNumber <= 0){ //checks if the number is a positive integer
+                return "Please try again with a positive integer."
+            } else {
+                var arrayRandom = []; //initilized array
+                arrayRandom.length = userNumber; //set the array size to the number provided by user. 
+                for (i=0; i < userNumber; i++){
+                    arrayRandom[i]=Math.random()*10; //random number generated between 0 and 10 and added to array. 
+                };            
+            };
+            return arrayRandom;
+        };
+        
         /* EXERCISE 11
     Write a function "checkArray" which receives an array of random numbers (created with giveMeRandom) and prints, for each item, whether it's bigger than 5.
     The function returs the sum of the numbers bigger than 5.
