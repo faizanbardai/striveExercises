@@ -133,6 +133,12 @@
     */
 
         /* WRITE YOUR CODE HERE */
+        function cutString (userString) {
+            if (typeof(userString) == "string"){ //string confirmation
+                return userString.substring(1,userString.length-1); //mdn substring
+            } else return console.log("Please try again with a string."); //if user provided anything other than string
+            
+        };
 
         /* EXERCISE 10
     Write a function "giveMeRandom" which accepts a number n and returns an array containing n random numbers between 0 and 10
