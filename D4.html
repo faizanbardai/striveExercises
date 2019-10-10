@@ -113,7 +113,21 @@
     */
 
         /* WRITE YOUR CODE HERE */
-
+        function upperFirst (userString) {
+            //assuming a new word begins after a space
+            //search for space index
+            //add one to index and capitalize the letter
+            var breakUserString = userString.split("");//string --> array
+            breakUserString[0]=breakUserString[0].toUpperCase(); //Capitalizing first letter | No space before first letter. 
+            for (i=0; i < breakUserString.length; i++){
+                if (breakUserString[i] == " "){ //finding space
+                    //console.log(breakUserString[i+1]);
+                    breakUserString[i+1]=breakUserString[i+1].toUpperCase(); //capitalizing next index
+                };
+            };
+            var unbreakUserString = breakUserString.join("");//array --> string
+            return unbreakUserString;
+        };
         /* EXERCISE 9
     Write a function "cutString" to create a new string without the first and last character of a given string.
     */
