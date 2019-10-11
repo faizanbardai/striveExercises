@@ -320,6 +320,16 @@
 
         average2(userArray);
 
+        function average(userArray) {
+            var numArray = userArray.reduce(function (sum, element) {
+                isNaN(element) ? null : sum.push(element);
+                return sum;
+            }, []);
+            return numArray.reduce(function (sum, element) {
+                return sum += element;
+            }, 0) / numArray.length;
+        };
+
         /* EXERCISE 18
     Write a function "longest" to find the longest string from an given array of strings.
     */
