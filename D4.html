@@ -330,6 +330,13 @@
             }, 0) / numArray.length;
         };
 
+        function average3(userArray) {
+            var numArray = userArray.filter(element => !isNaN(element));
+            return numArray.reduce((sum, element) => sum + element) / numArray.length;
+        };
+
+        average3(userArray);
+
         /* EXERCISE 18
     Write a function "longest" to find the longest string from an given array of strings.
     */
