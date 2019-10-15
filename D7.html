@@ -30,6 +30,15 @@
         Write a function to change the destination of every link to https://www.google.com
         */
 
+        function changeLink(newLink) {
+            var anchorArray = document.querySelectorAll(["a"]);
+            anchorArray.forEach(function (element) {
+                element.href = newLink;
+            });
+        };
+
+        changeLink("https://www.google.com");
+
         /* EXERCISE 5
        Write a function to add a new item ONLY to the second list
        */
