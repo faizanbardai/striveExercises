@@ -15,9 +15,11 @@
        */
 
         function changeClass(newClass) {
-            var stuff = document.querySelector(".myHeading");
-            stuff.classList.add(newClass);
-            stuff.classList.remove("myHeading");
+            var stuff = document.querySelectorAll(".myHeading");
+            stuff.forEach((e) => {
+                e.classList.add(newClass);
+                e.classList.remove("myHeading");
+            });
         };
 
         changeClass("FayJu");
@@ -106,6 +108,10 @@
       Create a new welcome alert message when the page successfully loads
         */
 
+        window.onload = function () {
+            window.alert("Page loaded!");
+        };
+
         /* EXERCISE 11
         Use HTML5 tags to divide sections, headers etc
         */
@@ -120,30 +126,41 @@
 </head>
 
 <body>
-    <h1 onclick="changeHeadingColor()">This is the title of the page</h1>
-    <h2 onclick="changeHeadingColor()">This is the subtitle of the page</h2>
+    <header>
+        <h1 class="myHeading" onclick="changeHeadingColor()">This is the title of the page</h1>
+        <h2 class="myHeading" onclick="changeHeadingColor()">This is the subtitle of the page</h2>
+    </header>
 
     <hr>
 
-    <ul id="firstList">
-        <li>1st</li>
-        <li>2nd</li>
-        <li>3rd</li>
-    </ul>
+    <nav>
+        <ul id="firstList">
+            <li>1st</li>
+            <li>2nd</li>
+            <li>3rd</li>
+        </ul>
+    </nav>
 
-    <ul id="secondList">
-        <li>1st</li>
-        <li>2nd</li>
-        <li>3rd</li>
-    </ul>
+    <section>
+        <ul id="secondList">
+            <li>1st</li>
+            <li>2nd</li>
+            <li>3rd</li>
+        </ul>
+    </section>
 
-    <a href="strive.school">This link goes to Strive School</a>
+    <section>
+        <a href="strive.school">This link goes to Strive School</a>
 
-    <div>
-        <p>This text is just for the exercise</p>
-    </div>
+        <div>
+            <p>This text is just for the exercise</p>
+        </div>
+    </section>
 
-    <p>And this text is just for the exercise too!</p>
+    <footer>
+        <p>And this text is just for the exercise too!</p>
+    </footer>
+
 </body>
 
 </html>
