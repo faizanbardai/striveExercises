@@ -14,13 +14,13 @@
        Write a function to change the class of the title of the page in "myHeading"
        */
 
-       function changeClass(newClass) {
-           var stuff = document.querySelector(".myHeading");
-           stuff.classList.add(newClass);
-           stuff.classList.remove("myHeading");           
-       };
+        function changeClass(newClass) {
+            var stuff = document.querySelector(".myHeading");
+            stuff.classList.add(newClass);
+            stuff.classList.remove("myHeading");
+        };
 
-       changeClass("FayJu");
+        changeClass("FayJu");
 
         /* EXERCISE 3
         Write a function to change the text of only the p which are child of a div
@@ -51,7 +51,7 @@
 
         function addToSecondList(something) {
             var newLi = document.createElement("li");
-            newLi.innerHTML=something;
+            newLi.innerHTML = something;
             document.querySelector("#secondList").appendChild(newLi);
         };
 
@@ -60,6 +60,14 @@
         /* EXERCISE 6
      Write a function to add a second paragraph to the div
       */
+
+        function addSecondPToDiv(something) {
+            var newPara = document.createElement("p");
+            newPara.innerHTML = something;
+            document.querySelector("div p").parentElement.appendChild(newPara);
+        };
+
+        addSecondPToDiv("This is a second para inside div.");
 
         /* EXERCISE 7
        Write a function to make the first UL disappear
