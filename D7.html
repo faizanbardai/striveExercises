@@ -49,6 +49,14 @@
        Write a function to add a new item ONLY to the second list
        */
 
+        function addToSecondList(something) {
+            var newLi = document.createElement("li");
+            newLi.innerHTML=something;
+            document.querySelector("#secondList").appendChild(newLi);
+        };
+
+        addToSecondList("4th item in 2nd list :)");
+
         /* EXERCISE 6
      Write a function to add a second paragraph to the div
       */
