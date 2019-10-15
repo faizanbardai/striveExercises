@@ -1,5 +1,3 @@
-<html>
-
 <head>
     <script>
         /* EXERCISE 1
@@ -15,6 +13,14 @@
         /* EXERCISE 2
        Write a function to change the class of the title of the page in "myHeading"
        */
+
+       function changeClass(newClass) {
+           var stuff = document.querySelector(".myHeading");
+           stuff.classList.add(newClass);
+           stuff.classList.remove("myHeading");           
+       };
+
+       changeClass("FayJu");
 
         /* EXERCISE 3
         Write a function to change the text of only the p which are child of a div
