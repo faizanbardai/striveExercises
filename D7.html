@@ -81,6 +81,14 @@
         Write a function to make the background of every UL green
         */
 
+        function backgroundUL(color) {
+            document.querySelectorAll("ul").forEach(function (e) {
+                e.style.backgroundColor = color;
+            });
+        };
+
+        backgroundUL("green");
+
         /* EXERCISE 9
         Make the heading of the page changing color every time the user clicks on it
         */
