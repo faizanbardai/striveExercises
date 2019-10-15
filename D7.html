@@ -93,6 +93,15 @@
         Make the heading of the page changing color every time the user clicks on it
         */
 
+        function changeHeadingColor() {
+            document.querySelectorAll("h1, h2").forEach(function (e) {
+                if (e.style.color === "red") {
+                    e.style.color = "green";
+                } else
+                    e.style.color = "red";
+            });
+        };
+
         /* EXERCISE 10
       Create a new welcome alert message when the page successfully loads
         */
@@ -111,8 +120,8 @@
 </head>
 
 <body>
-    <h1>This is the title of the page</h1>
-    <h2>This is the subtitle of the page</h2>
+    <h1 onclick="changeHeadingColor()">This is the title of the page</h1>
+    <h2 onclick="changeHeadingColor()">This is the subtitle of the page</h2>
 
     <hr>
 
