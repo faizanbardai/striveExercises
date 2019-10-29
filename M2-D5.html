@@ -383,6 +383,7 @@
 
     function testFunction() {
         addNewLinkToNav("FayJu","#1");
+        searchLookingClassItem();
     };
 
     // EX11
@@ -392,6 +393,12 @@
         linkAnchor.innerText=newLink;
         linkAnchor.href=href;
         navHandle.append(linkAnchor);
+    };
+
+    // EX12
+    function searchLookingClassItem() {
+        var searchHandle = _$(".blog-header .col-4:last-child a:first-child");
+        searchHandle.parentNode.removeChild(searchHandle);
     };
     </script>
 </body>
