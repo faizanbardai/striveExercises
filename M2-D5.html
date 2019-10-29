@@ -385,6 +385,7 @@
         addNewLinkToNav("FayJu","#1");
         searchLookingClassItem();
         changeBackgroundOfJumbotron();
+        changeColorOfMainTitle();
     };
 
     // EX11
@@ -406,6 +407,12 @@
     function changeBackgroundOfJumbotron() {
         var junboHandle = _$(".jumbotron");
         junboHandle.setAttribute('style', 'background-color: yellow !important');
+    };
+    
+    //EX14
+    function changeColorOfMainTitle() {
+        var mainTitleHandle = _$("h1");
+        mainTitleHandle.setAttribute('style', 'color: white !important');
     };
     </script>
 </body>
