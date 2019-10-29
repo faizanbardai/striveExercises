@@ -373,10 +373,25 @@
         EX20) Write an alert with the name of the author every time the user hover with the mouse over an author name
     */
     function _$(a) {
-        document.querySelector(a);
+        return document.querySelector(a);
     };
     function _$$(a) {
-        document.querySelectorAll(a);
+        return document.querySelectorAll(a);
+    };
+
+    window.onload = testFunction;
+
+    function testFunction() {
+        addNewLinkToNav("FayJu","#1");
+    };
+
+    // EX11
+    function addNewLinkToNav(newLink,href) {
+        var navHandle = _$(".nav");
+        var linkAnchor = _$(".nav a");
+        linkAnchor.innerText=newLink;
+        linkAnchor.href=href;
+        navHandle.append(linkAnchor);
     };
     </script>
 </body>
