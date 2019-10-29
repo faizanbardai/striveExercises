@@ -384,6 +384,7 @@
     function testFunction() {
         addNewLinkToNav("FayJu","#1");
         searchLookingClassItem();
+        changeBackgroundOfJumbotron();
     };
 
     // EX11
@@ -399,6 +400,12 @@
     function searchLookingClassItem() {
         var searchHandle = _$(".blog-header .col-4:last-child a:first-child");
         searchHandle.parentNode.removeChild(searchHandle);
+    };
+
+    // EX13
+    function changeBackgroundOfJumbotron() {
+        var junboHandle = _$(".jumbotron");
+        junboHandle.setAttribute('style', 'background-color: yellow !important');
     };
     </script>
 </body>
