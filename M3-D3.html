@@ -12,8 +12,10 @@
         [Done]
         3) When the user clicks on the "VIEW" button inside the Card, the image must be shown in a Modal View
         [Done]
-        4) The Edit button should be replace with a "Hide" button. 
+        4) The Edit button should be replace with a "Hide" button.
+        [Done] 
         5) When the hide button is pressed, the whole picture card disappears.
+        [Done]
         6) Replace the "9 mins" template with the ID of the Image
         
         [EXTRA]
@@ -676,8 +678,9 @@
                                   <button
                                     type="button"
                                     class="btn btn-sm btn-outline-secondary"
+                                    onclick="hideCard()"
                                   >
-                                    Edit
+                                    Hide
                                   </button>
                                 </div>
                                 <small class="text-muted">9 mins</small>
@@ -697,6 +700,9 @@
           largeImg.style.width = "100%";
           document.querySelector(".modal-body").append(largeImg);
         }
+      function hideCard() {
+        event.target.parentNode.parentNode.parentNode.parentElement.className = "d-none";
+      }
     </script>
   </body>
 </html>
