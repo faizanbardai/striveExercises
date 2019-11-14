@@ -41,7 +41,37 @@
 </head>
 
 <body>
-    <div class="container"></div>
+    <div class="container-fluid">
+        <form onsubmit="getProductData()">
+            <div class="form-group col-6 mx-auto">
+                <div class="row">
+                    <div class="col-4"><label for="name">Name:</label></div>
+                    <div class="col-8"><input type="text" name="" id="name" placeholder="Name of the product"
+                            required><br></div>
+                </div>
+                <div class="row">
+                    <div class="col-4"><label for="description">Description</label></div>
+                    <div class="col-8"><textarea class="form-control" id="description" rows="3"
+                            placeholder="Product Description" required></textarea></div>
+                </div>
+                <div class="row">
+                    <div class="col-4"><label for="brand">Brand: </label></div>
+                    <div class="col-8"><input type="text" name="" id="brand" placeholder="Brand" required></div>
+                </div>
+                <div class="row">
+                    <div class="col-4"><label for="imageURL"></label>Image URL</div>
+                    <div class="col-8"><input type="text" name="" placeholder="https://www.image.com/1" id="imageURL"
+                            required></div>
+                </div>
+                <div class="row">
+                    <div class="col-4"><label for="">Price: </label></div>
+                    <div class="col-8"><input type="number" name="" id="price" required></div>
+                </div>
+                <button class="btn btn-primary" type="submit">Add product</button>
+            </div>
+        </form>
+
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -53,6 +83,49 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script>
+        const baseURL = "https://strive-school-testing-apis.herokuapp.com/api/product/";
+        const username = "user24";
+        const password = "48D4vaVh6Ra3DD8w";
+        const username64 = btoa(username);
+        const password64 = btoa(password);
+        const auth = btoa(username+":"+password)
+        console.log(username64 + ":" + password64);
+        const getProductData = () => {
+            event.preventDefault();
+            let name = document.querySelector("#name").value;
+            let description = document.querySelector("#description").value;
+            let brand = document.querySelector("#brand").value;
+            let imageUrl = document.querySelector("#imageURL").value;
+            let price = document.querySelector("#price").value;
+
+            let productObject = {
+                name: name,
+                description: description,
+                brand: brand,
+                imageUrl: imageUrl,
+                price: price,
+            };
+            console.log(productObject);
+            console.log(JSON.stringify(productObject));
+            console.log(addProduct(productObject));
+
+        };
+
+        const addProduct = async productObject => {
+            const response = await fetch(baseURL, {
+                method: "POST",
+                body: JSON.stringify(productObject),
+                headers: new Headers({
+                    "Authorization": "Basic " + auth,
+                    "Content-Type": "application/json"
+                })
+            });
+            return response;
+        };
+
+    </script>
+
 </body>
 
 </html>
