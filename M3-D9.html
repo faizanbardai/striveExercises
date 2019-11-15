@@ -14,86 +14,96 @@
 
 <body>
     <div class="container">
-        <button type="button" name="" id="" class="btn btn-primary btn-block my-2">Create Product</button>
+        <button type="button" class="btn btn-primary btn-block my-2" data-toggle="modal"
+            data-target="#exampleModal">Create Product</button>
         <div class="input-group mb-2">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">Search</span>
             </div>
-            <input type="text" class="form-control" placeholder="Product name or Brand" aria-label="Search field"
+            <input type="text" id="searchTextField" onkeyup="filterProducts()" class="form-control" placeholder="Product name or Brand" aria-label="Search field"
                 aria-describedby="basic-addon1">
         </div>
         <div class="accordion" id="accordionExample">
-            <div class="card">
-                <div class="card-header" id="headingOne">
+            <!-- <div class="card">
+                <div class="card-header" id="h5dcd68b42c83f70017c6819c">
                     <h2 class="mb-0">
                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Item 1 : Product 1
+                            data-target="#c5dcd68b42c83f70017c6819c" aria-expanded="false"
+                            aria-controls="c5dcd68b42c83f70017c6819c">
+                            Samsung Galaxy Note8 : Samsung
                         </button>
+                        <div class="float-right">
+                            <button class="btn btn-light"><i class="fas fa-edit"></i></button>
+                            <button class="btn btn-light"><i class="fas fa-trash-alt"></i></button>
+                        </div>
                     </h2>
                 </div>
 
-                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div id="c5dcd68b42c83f70017c6819c" class="collapse" aria-labelledby="h5dcd68b42c83f70017c6819c"
+                    data-parent="#accordionExample" style="">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-12 col-md-6">
-                                <img src="https://drop.ndtv.com/TECH/product_database/images/2152017124957PM_635_nokia_3310.jpeg?downsize=*:420&output-quality=80"
+                                <img src="https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-note8-5.jpg"
                                     alt="product image" style="height: 200px;">
                             </div>
                             <div class="col-12 col-md-6">
-                                Price: $ 10.00 <br>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                has been the industry's standard dummy text ever since the 1500s, when an unknown
-                                printer took a galley of type and scrambled it to make a type specimen book. It has
-                                survived not only five centuries, but also the leap into electronic typesetting,
-                                remaining essentially unchanged. It was popularised in the 1960s with the release of
-                                Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                                publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                Price: $ 799 <br>
+                                Features a smarter S Pen, our largest Infinity Display and our best camera yet.
+                                With Galaxy Note8, you can create, share, and express your ideas more than ever before.
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="headingTwo">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                            data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            Collapsible Group Item #2
-                        </button>
-                    </h2>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                    <div class="card-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                        3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                        laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
-                        coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
-                        anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-                        occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
-                        of them accusamus labore sustainable VHS.
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="headingThree">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                            data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Collapsible Group Item #3
-                        </button>
-                    </h2>
-                </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                    <div class="card-body">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-                        3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                        laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
-                        coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
-                        anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-                        occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
-                        of them accusamus labore sustainable VHS.
-                    </div>
+            </div> -->
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <!-- form -->
+                    <form onsubmit="AddNewProduct()">
+                        <div class="modal-header">
+                            <h5 class="modal-title">New Product</h5>
+                            <button type="button" onclick="clearModal()" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="form-group mx-auto">
+                                    <div class="row mb-3">
+                                        <div class="col-4"><label for="name">Name:</label></div>
+                                        <div class="col-8"><input type="text" name="" id="name"
+                                                placeholder="Name of the product" required><br></div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-4"><label for="description">Description</label></div>
+                                        <div class="col-8"><textarea class="form-control" id="description"
+                                                placeholder="Product Description" required></textarea></div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-4"><label for="brand">Brand: </label></div>
+                                        <div class="col-8"><input type="text" name="" id="brand" placeholder="Brand"
+                                                required></div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-4"><label for="imageURL"></label>Image URL</div>
+                                        <div class="col-8"><input type="text" name=""
+                                                placeholder="https://www.image.com/1" id="imageURL" required></div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-4"><label for="">Price: </label></div>
+                                        <div class="col-8"><input type="number" name="" id="price" placeholder="10"
+                                                required></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" onclick="clearModal()" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <input type="submit" class="btn btn-primary" value="Save">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -110,6 +120,197 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/be0c1f0340.js" crossorigin="anonymous"></script>
+    <script>
+
+        const baseURL = "https://strive-school-testing-apis.herokuapp.com/api/product/";
+        const username = "user24";
+        const password = "48D4vaVh6Ra3DD8w";
+        const auth = btoa(username + ":" + password);
+        const headers = new Headers({
+            "Authorization": "Basic " + auth,
+            "Content-Type": "application/json"
+        });
+        let currentProductID;
+        let productArray;
+
+        const GETAmazonArray = async myURL => {
+            let response = await fetch(myURL, {
+                headers
+            });
+            response = await response.json();
+            return response;
+        };
+
+        const getProducts = async () => {
+            productArray = await GETAmazonArray(baseURL);
+            updatePage(productArray);
+        };
+
+        const addProduct = async (myURL, productObject) => {
+            let response = await fetch(myURL, {
+                method: "POST",
+                body: JSON.stringify(productObject),
+                headers
+            });
+            return response;
+        };
+
+        const deleteProduct = async () => {
+            try {
+                let myClick = event;
+                let myURL = baseURL;
+                let currentProductID = event.target.parentNode.dataset.id;
+                let response = await fetch(myURL + currentProductID, {
+                    headers,
+                    method: "DELETE"
+                });
+                if (response.ok) {
+                    myClick.target.parentNode.parentNode.parentNode.parentNode.parentNode.remove();
+                }
+            }
+            catch (error) {
+                console.log(error);
+            }
+        }
+
+        const editProduct = async () => {
+            switchNewandSave();
+            currentProductID = event.target.parentNode.dataset.id;
+            let singleProduct = await GETAmazonArray(baseURL + currentProductID);
+            document.querySelector("#name").value = singleProduct.name;
+            document.querySelector("#description").value = singleProduct.description;
+            document.querySelector("#brand").value = singleProduct.brand;
+            document.querySelector("#imageURL").value = singleProduct.imageUrl;
+            document.querySelector("#price").value = singleProduct.price;
+        };
+
+        const saveExistingProduct = async () => {
+            event.preventDefault();
+            let productObject = getProductDataFromModal();
+            try {
+                let response = await fetch(baseURL + currentProductID, {
+                    method: "PUT",
+                    body: JSON.stringify(productObject),
+                    headers
+                });
+                if (response.ok) {
+                    clearModalAndRefresh();
+                }
+            }
+            catch (error) {
+                console.log(error)
+            }
+        }
+
+        window.onload = getProducts();
+
+        const updatePage = filteredProduct => {
+            let accordionDiv = document.querySelector(".accordion");
+            accordionDiv.innerHTML="";
+            let allProductDiv = filteredProduct.map(product => prepareProductCard(product));
+            allProductDiv.forEach(product => accordionDiv.innerHTML += product);
+        }
+
+        const AddNewProduct = async () => {
+            event.preventDefault();
+            let productObject = getProductDataFromModal();
+            let addResponse = await addProduct(baseURL, productObject);
+            if (addResponse.ok) {
+                clearModalAndRefresh();
+            }
+        }
+
+        const getProductDataFromModal = () => {
+            let name = document.querySelector("#name").value;
+            let description = document.querySelector("#description").value;
+            let brand = document.querySelector("#brand").value;
+            let imageUrl = document.querySelector("#imageURL").value;
+            let price = document.querySelector("#price").value;
+
+            let productObject = {
+                name: name,
+                description: description,
+                brand: brand,
+                imageUrl: imageUrl,
+                price: price,
+            };
+            return productObject;
+        }
+
+        const prepareProductCard = product => {
+            return `<div class="card">
+                <div class="card-header" id="h${product._id}">
+                    <h2 class="mb-0">
+                        <button 
+                            class="btn btn-link collapsed" 
+                            type="button" 
+                            data-toggle="collapse" 
+                            data-target="#c${product._id}" 
+                            aria-expanded="true" 
+                            aria-controls="c${product._id}">
+                            ${product.name} : ${product.brand}
+                        </button>
+                        <div class="float-right">
+                            <button onclick="editProduct()" data-toggle="modal" data-target="#exampleModal" class="btn btn-light" data-id="${product._id}"><i class="fas fa-edit"></i></button>
+                            <button onclick="deleteProduct()" class="btn btn-light" data-id="${product._id}"><i class="fas fa-trash-alt"></i></button>
+                        </div>
+                    </h2>
+                </div>
+
+                <div id="c${product._id}" class="collapse" aria-labelledby="h${product._id}" data-parent="#accordionExample">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <img src="${product.imageUrl}" alt="product image" style="height: 200px;">
+                            </div>
+                            <div class="col-12 col-md-6">
+                                Price: $ ${product.price} <br>
+                                ${product.description}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`
+        }
+
+        const switchNewandSave = () => {
+            let headerText = document.querySelector("form h5").innerText;
+            headerText === "New Product" ? headerText = "Product Information" : headerText = "New Product";
+            document.querySelector("form h5").innerText = headerText;
+
+            let formSubmit = document.querySelector("form");
+            formSubmit.getAttribute("onsubmit") === "AddNewProduct()" ?
+                formSubmit.setAttribute("onsubmit", "saveExistingProduct()") : formSubmit.setAttribute("onsubmit", "AddNewProduct()");
+
+        }
+
+        const clearModalAndRefresh = () => {
+            document.querySelector(".modal .modal-footer button").click();
+            let accordionDiv = document.querySelector(".accordion");
+            accordionDiv.innerHTML = "";
+            clearModal();
+            getProducts();
+        }
+
+        const clearModal = () => {
+            document.querySelector("#name").value = "";
+            document.querySelector("#description").value = "";
+            document.querySelector("#brand").value = "";
+            document.querySelector("#imageURL").value = "";
+            document.querySelector("#price").value = "";
+        }
+
+        const filterProducts = () => {
+            if(document.querySelector("#searchTextField").value.length > 3) {                
+                let searchKeyword = document.querySelector("#searchTextField").value.toLowerCase();
+                let filteredProductArray = productArray.filter(product => product["brand"].toLowerCase().includes(searchKeyword));
+                updatePage(filteredProductArray);
+            } else {
+                updatePage(productArray);
+            }
+        }
+    </script>
 </body>
 
 </html>
